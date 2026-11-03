@@ -1,0 +1,2 @@
+langgraph==1.2.19
+trafilatura==2.3.1

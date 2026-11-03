@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-ai-research-agent"
+version = "1.0.0"
+description = "Bounded evidence-first web research with application-owned citation provenance"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "AI/ML Portfolio Project" }]
+dependencies = [
+  "langgraph==1.2.19",
+  "trafilatura==2.3.1",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "ruff>=0.11,<1"]
+
+[project.scripts]
+research-agent = "research_agent.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["research_agent*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

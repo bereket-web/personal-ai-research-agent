@@ -1,0 +1,9 @@
+include README.md
+include DESIGN_DECISIONS.md
+include ECOSYSTEM_REPORT.md
+include LICENSE
+include requirements.txt
+include .env.example
+recursive-include docs *.mmd *.png
+recursive-include evaluation *.md
+recursive-include tests *.py

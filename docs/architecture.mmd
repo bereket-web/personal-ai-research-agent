@@ -1,0 +1,11 @@
+flowchart TD
+    Q[Research question] --> P[Plan up to 3 search tasks]
+    P --> S[Search permitted public sources]
+    S --> F[Fetch bounded static HTML]
+    F --> E[Extract source passages + provenance IDs]
+    E --> C[Compare lexical overlap]
+    C --> R[Build extractive report]
+    R --> A[Audit IDs + exact excerpt provenance]
+    A --> O[Markdown / JSON]
+
+    LLM[Optional LLM planner] -. query suggestions only .-> P
